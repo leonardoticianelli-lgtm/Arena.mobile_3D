@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3D Mobile Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="game-container"></div>
+
+    <!-- HUD Overlay HTML5 -->
+    <div id="hud">
+        <div id="stats">
+            <div class="bar-container">
+                <span class="bar-label">HP</span>
+                <div class="bar hp-bar"><div id="hp-fill"></div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">EP</span>
+                <div class="bar ep-bar"><div id="ep-fill"></div></div>
+            </div>
+        </div>
+
+        <div id="kill-feed"></div>
+
+        <div id="weapon-selector">
+            <button onclick="selectWeapon('knife')">Faca</button>
+            <button onclick="selectWeapon('pistol')">Pistola</button>
+            <button onclick="selectWeapon('mp40')">MP40</button>
+            <button onclick="selectWeapon('ak47')">AK47</button>
+            <button onclick="selectWeapon('awm')">AWM</button>
+            <button onclick="selectWeapon('bazooka')">Bazuca</button>
+        </div>
+
+        <div id="ammo-display">Munição: <span id="ammo-count">∞</span></div>
+        <div id="map-selector">
+            <button onclick="switchMap(0)">Fábrica</button>
+            <button onclick="switchMap(1)">Deserto</button>
+            <button onclick="switchMap(2)">Industrial</button>
+        </div>
+    </div>
+
+    <!-- Touch Controls -->
+    <div id="touch-left" class="touch-zone">
+        <div id="joystick-left" class="joystick"><div class="stick"></div></div>
+    </div>
+    <div id="touch-right" class="touch-zone">
+        <button id="btn-shoot">ATIRAR</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
